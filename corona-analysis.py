@@ -16,13 +16,13 @@ n=int((len(master)/6)-1)
 s_cured=master[5::6]
 state_cured=[]
 for i in range(0,n):
-    ele=int(s_cured[i].text)
+    ele=(s_cured[i].text)
     state_cured.append(ele)
 #webscracping deaths according to states
 s_deaths=master[2::6]
 state_deaths=[]
 for i in range(0,n):
-    ele=int(s_deaths[i].text)
+    ele=(s_deaths[i].text)
     state_deaths.append(ele)
 print("Total Confirmed cases in India are: ",master[-5].text)
 print("\nTotal Deaths in India are: ",master[-4].text)
