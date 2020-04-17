@@ -11,15 +11,15 @@ uClient.close()
 page_soup=soup(page_html,"html.parser")
 print("CORONA Analysis")
 master=page_soup.findAll("td")
-n=int((len(master)/6)-1)
+n=int((len(master)/5)-1)
 #webscracping deaths according to states
-s_cured=master[5::6]
+s_cured=master[4::5]
 state_cured=[]
 for i in range(0,n):
     ele=(s_cured[i].text)
     state_cured.append(ele)
 #webscracping deaths according to states
-s_deaths=master[2::6]
+s_deaths=master[3::5]
 state_deaths=[]
 for i in range(0,n):
     ele=(s_deaths[i].text)
@@ -29,7 +29,7 @@ print("\nTotal Deaths in India are: ",master[-4].text)
 print("\nTotal Cured people in India are: ",master[-1].text)
 print("\n")
 #calculating confirmed cases in each state
-state=master[1::6]
+state=master[1::5]
 state_confir=[]
 #a list with commas
 state_con=[]
@@ -57,7 +57,7 @@ for i in state_confir:
 #webscraping name of each state
 statelist=[]
 for i in range(0,n):
-    ele=master[i+i*5].text
+    ele=master[i+i*4].text
     statelist.append(ele)
 #dictionary for the names and population 
 state_dict={"Maharashtra ":112374333,
